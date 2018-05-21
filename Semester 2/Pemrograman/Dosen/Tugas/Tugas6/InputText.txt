@@ -1,0 +1,3 @@
+tHiS iS tEXt FiLEs wHicH is cOntAin inPutTeXt
+aNd aLsO hAvE a mUlTiPlE lInE
+tHis is aNoThEr LiNe wHiCh iS cOntAin mUltIplE sInGle ChAraActer a B c D e F g
