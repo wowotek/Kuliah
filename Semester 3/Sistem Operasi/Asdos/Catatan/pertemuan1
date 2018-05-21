@@ -1,0 +1,35 @@
+#Sistem Operasi Materi 1
+
+Pengertian OS atau SO : 
+	-Program untuk mengatur Hardware yang menyediakan landasan Aplikasi yang ada diatasnya
+	-Penghubung hardware dengan usernya.
+	
+Layanan Sistem Operasi :
+	- Pembuatan Program
+	- Eksekusi Program
+	- Operasi Input / Output
+			Didukung Oleh Hardware input dan output, c/o : keyboard, monitor
+	- Manipulasi Berkas
+			(file Management)
+	- Deteksi Error
+			(ketiadaan suatu process, contoh troubleshooting tidak ada koneksi internet)
+	
+Jenis Jenis Sistem Operasi :
+	Secara Struktur :
+	- Main Frame (superkomputer), Komputer Umum (smartphone, PC, laptop personal)
+	
+	Secara Tampilan :
+	- GUI dan CLI
+	
+	Secara Lisensi:
+	- Closed Sourced (Tertutup)
+	- Open Source (Terbuka)
+
+Alat Untuk Matkul:
+	Virtual Machine Softare:
+		- VirtualBox :
+			> Open Source, 64Bit
+			< No Screen Capture, Cannot Run High Load Application
+		- VMWare :
+			> Full Virtualization, 64Bit
+			< Closed Source

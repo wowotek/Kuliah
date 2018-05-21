@@ -1,0 +1,17 @@
+#Praktek 1, Manipulasi dan Penginstallan dengan VirtualBox
+
+Langkah 1:
+    1. Buka Virtual Box
+    2. Pencet New
+    3. Setting Virtual Machine
+    4. Pilih Antara Windows atau Linux
+    5. Versi : Bebas;
+    6. Next, pilih memori yang akan digunakan, sesuaikan dengan komputer yang dipakai.
+    7. Next, Tambah Hardisk
+    8. Next, Allocate Dynamically (dialokasikan secara dinamik)
+    9. Alokasikan Berapa Banyak butuh Hardisk
+    10. Create.
+
+Langkah 2:
+    1. Klik Kanan masuk Setting, Klik Storage(Penyimpanan)
+    2. Untuk ISO install Manual klik yang IDE

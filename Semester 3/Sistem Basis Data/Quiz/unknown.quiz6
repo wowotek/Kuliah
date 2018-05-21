@@ -1,0 +1,33 @@
+> People are not born with 'numbers', but lot of systems assign student numbers, customer IDs, etc. These are known as a/an ____________ UID.
+    X Artificial
+    O Unrealistic
+    O Identification
+    O Structured
+
+> Examine the following Entity and decide which attribute breaks the 2nd Normal Form Rule:
+    ENTITY : CLASS
+    ATTRIBUTES : 
+        # CLASS ID
+        # TEACHER ID
+        SUBJECT
+        TEACHER NAME
+
+    O CLASS ID
+    O SUBJECT
+    X TEACHER ID
+    O TEACHER NAME <-- Right Answer
+
+> Examine the following Entity and decide which rule of Normal Form is being violated:
+    ENTITY : CLIENT
+    ATTRIBUTES :
+        # CLIENT ID
+        FIRST NAME
+        LAST NAME
+        ORDER ID
+        STREET
+        ZIP CODE
+
+    O 1st Normal Form <-- Right Answer
+    O 2nd Normal Form
+    O 3rn Normal Form
+    X None of the Above, the entity is fully normalised.
