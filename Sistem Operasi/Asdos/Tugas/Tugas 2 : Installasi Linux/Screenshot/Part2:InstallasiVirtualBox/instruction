@@ -1,0 +1,9 @@
+Installasi VirtualBox:
+    1. Buka Terminal dengan :
+        > shortcut SHIFT+SUPER+T atau SHIFT+(LOGO-WINDOWS)+T. atau
+        > buka Launcher dengan Logo-Windows, lalu ketikan "Terminal", tekan Enter
+    2. untuk Distro Debian dan turunannya ketikkan :
+        $ sudo apt-get install virtualbox-qt
+        tekan ENTER.
+    3. Masukkan password komputer anda lalu tekan 'y' untuk menginstall.
+
