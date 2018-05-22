@@ -9,5 +9,5 @@ Tugas 2 : Install Linux Ubuntu dengan VirtualBox
     -> Besar Disk 50GB
     -> Dalam Installasi Ubuntu disk Dipartisi 20GB untuk mount point : "/" dan 2GB untuk "swap"
     Bonus:
-        -> Installasi Selain Ubuntu dengan satu Varian (c/o: Debian, Kali, Elementary, Ubuntu MATE, KDE)
+        -> Installasi Selain Ubuntu dengan satu Varian (c/o: Debian, Kali, Elementary, Mint, MATE, KDE)
 
