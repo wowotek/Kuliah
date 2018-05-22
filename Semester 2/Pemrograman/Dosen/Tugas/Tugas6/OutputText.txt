@@ -1,3 +1,0 @@
-This Is Text Files Which Is Contain Inputtext
-And Also Have A Multiple Line
-This Is Another Line Which Is Contain Multiple Single Charaacter A B C D E F G

@@ -1,0 +1,108 @@
+
+
+
+
+
+
+
+
+
+
+PERHATIAN !! : Untuk Instruksi Masing Masing Part, dapat dilihat didalam setiap folder part
+
+
+
+
+
+
+
+
+
+
+PART 1 : Download ISO
+IMGSRC = screenshot/downloadISO/*
+Unduh File ISO Lubuntu:
+    1. Buka Browser anda lalu buka Laman :
+        https://lubuntu.net
+    2. Silahkan Download sesuai dengan Arsitektur Prosesor Anda, untuk komputer Modern Jaman now, anda dapat Mendownload Lubuntu (64-bit AMD64). saya akan mendownload versi ini.
+    3. Pilih Save File lalu OK.
+    4. Tunggu Hingga Unduhan Selesai.
+
+PART 2 : Installasi Virtual Box
+IMGSRC = screenshot/installasiVirtualBox/*
+Installasi VirtualBox:
+    1. Buka Terminal dengan :
+        > shortcut SHIFT+SUPER+T atau SHIFT+(LOGO-WINDOWS)+T. atau
+        > buka Launcher dengan Logo-Windows, lalu ketikan "Terminal", tekan Enter
+    2. untuk Distro Debian dan turunannya ketikkan :
+        $ sudo apt-get install virtualbox-qt
+        tekan ENTER.
+    3. Masukkan password komputer anda lalu tekan 'y' untuk menginstall.
+
+PART 3 : pra-Installasi OS / Setting Virtual Box
+IMGSRC = screenshot/praInstallasiOS/*
+Pra-Installasi OS:
+    1. untuk membuka VirtualBox ada dua cara yaitu:
+        1. Via Terminal :
+            > Buka Terminal Seperti instruksi no.1 di Installasi Virtualbox.
+            > ketikkan 
+                $ "virtualBox --fullscreen"
+        2. Via Launcher :
+            > Buka Launcher, lalu ketikkan "virtualbox"
+            > Tekan Enter.
+    2. Tekan Tombol "New"
+    3. Ketikkan Nama Bebas pada field Name
+    4. Ubah Tipe OS menjadi "Linux"
+    5. Untuk Versi kita memilih Distribusi "Ubuntu 64-Bit" lalu tekan Next
+    6. Masukkan Geser Pointer untuk mengatur Jumlah RAM secukupnya. Untuk Kali ini saya menginput sebanyak 4096 MB atau 4 GB. Lalu tekan Next
+    7. Pilih Opsi "Create a Virtual Hardisk Now" lalu tekan Next
+    8. Pilih Opsi "VHD (VirtualBox Hard Disk)" lalu tekan Next
+    9. Pilih Opsi "Dynamically Allocated" lalu tekan Next
+    10. Alokasikan Hadisk diatas 25 GB. saya memasukan sebanyak 50 GB
+    11. Lalu tekan Create. untuk menyelesaikan Set Up
+    12. Klik tombol Setting
+    13. Pindahkan ke Tab Storage.
+    14. Klik pada "Controller:IDE" -> "Empty"
+    15. klik gambar Keping Cakram disebelah seleksi "Optical Drive:" -> "Choose Virtual Optical Disk File"
+    16. Arahkan pada file ISO yang sudah di unduh pada Instruksi Unduh File OS diatas.
+    17. Klik OK. lalu Pindahkan Setting ke Tab Display, lalu ubah Video Memory minimal sebanyak 64 MB.
+    18. (Opsional) Jika saat Installasi OS nanti anda merasa Tampilan OS kurang Besar, anda dapat menggeser Scale Factor menuju presentase yang lebih besar. untuk contoh ini saya menggunakan 125%.
+    19. Klik OK untuk Menyelesaikan Setting.
+
+PART 4 : Installasi OS
+IMGSRC = screenshot/installasiOS/*
+Installasi OS:
+    1. Tekan Tombol Start
+    2. Selagi Menunggu Boot, anda bisa menekan. CTRL Kanan + F jika anda menginginkan Full Screen
+    3. Tunggu sampai Boot ke Seleksi Bahasa, Pilih Bahasa yang ingin anda gunakan, kaliini saya menggunakan bahasa Inggris (English), lalu tekan Enter.
+    4. Lalu Saat anda masuk ke Menu Utama, silahkan pilih Install Lubuntu.
+    5. Tunggu hingga masuk kedalam pilih bahasa (lagi) Pilih bahasa lalu tekan Continue. untuk kali ini saya memilih English
+    6. Saat Seleksi Keyboard Layout, saya menggunakan Standar English(US) dengan bahasa English(US), lalu tekan Continue.
+    7. Untuk Updates and Other Software, anda dapat memilih minimal installasi atau Normal Installation, untuk kali ini saya memilih Minimal Installation. jika anda memiliki Device untuk konek ke Network, anda dapat mencentang "Download Updates while installing lubuntu". untuk kaliini saya tidak menggunakan ini.
+    8. (Opsional) untuk laptop anda dapan mencentang "Install third-party software....." untuk menginstall driver lain dan encoder video.
+    9. Klik continue.
+    10. Saat anda ditunjukan installation type, pilih Something Else. lalu klik continue.
+    11. <SEKSI PARTISI> IMGSRC = screenshot/installasiOS/seksiPartisi/*
+        1. Saat memasuki seksi Ini, silahkan klik "New Partition Table", Jika ada Notifikasi Lanjutan, klik Continue.
+        2. Lalu klik pada Free Space, klik tombol "+" disebelah kiri, lalu Set Size Menjadi diatas  > 20240 MB, kaliini saya memasukan angka 22000 MB. Ubah Mount Point menjadi "/". Klik OK
+        3. Lalu akan muncul Free Space Baru, Klik Tombol "+" lagi.
+        4. Ubah Size menjadi diatas > 2048 MB. kali ini saya mengubah Menjadi 2148 MB. Ubah Type of New Partition Menjadi Logical, lalu ubah Use As Menjadi "swap area". Klik OK.
+        5. Terakhir anda klik Free Space, klik tombol "+" untuk terakhil kali.
+        6. Biarkan Size seperti yang sudah ditetapkan secara Otomatis. ubah Mount Point menjadi "/home" partisi ini akan digunakan untuk installasi Aplikasi Tambahan. klik OK.
+        7. Klik Install now, jika ada notifikasi lanjutan klik Continue.
+        </SEKSI PARTISI>
+    12. Saat ditunjukan Map Dunia, pilih tempat Anda Sekarang Tinggal untuk set lokasi, dan Jam. lalu klik Continue
+    13. Kaliini anda akan diminta memasukan Info User Komputer anda. masukkan sesuka hati. Saran saya, gunakan Username yang pendek dan mudah diingat.
+    14. Klik Continue, untuk Menginstall Lubuntu. kaliini anda dapat meninggalkan Kursi anda dan bikin indomie :).
+    15. Jika Instalasi sudah selesai, silahkan Klik Restart Now.
+    16. Jika anda ada Notifikasi Lanjutan, klik Enter, tunggu hingga Layar Menghitam lalu (jika anda menggunakan fullscreen silahkan keluar dengan CTRL KANAN + F) klik file -> close -> power off machine -> OK.
+
+PART 5 : Pasca Installasi OS
+IMGSRC = screenshot/pascaInstallasiOS/*
+Menjalankan OS:
+    1. Klik Start lalu saat ada Notifikasi F12 to select boot device. silahkan tekan tombol F12.
+    2. tekan tombol yang menunjukkan Hard Disk, kaliini adalah angka 1. tekan angka 1.
+    3. Saat memasuki notifikasi GNU GRUB. silahkan pilih *UBUNTU lalu tekan Enter.
+    4. (Opsional) Saat Ini anda dapat memasuki Fullscreen.
+    6. Tunggu hingga masuk login Screen lalu Silahkan Login menggunakan, Username yang sudah anda masukan saat installasi.
+    7. Silahkan Menggunakan OS Baru Anda :D.

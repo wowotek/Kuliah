@@ -1,0 +1,12 @@
+Entity Relationship:
+    diagram to represent the model of company's component
+
+    Table Has a Following Components;
+        1. Table Names
+        2. Column Names
+        3. Keys :
+            Primary Key -> Unique Identifier for each row of data
+            Foreign Key -> links Data in one table to the data in a second table
+                           by referring to pk column in the second table
+        4. Unique : indicates if value contained in a column is unique within the table
+
