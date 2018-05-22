@@ -17,16 +17,4 @@ public class Kendarai {
             return "INVALID";
         }
     }
-
-    //Contoh Percabangan memakai switch, fungsi ini tidak dipakai, hanya contoh.
-    public String __belok_switch(int arah){
-        switch(arah){
-            case 1:
-                return ("Motor " + this.namaMotor + " Belok Kiri");
-            case 2:
-                return ("Motor " + this.namaMotor + " Belok Kiri");
-            default:
-                return "INVALID";
-        }
-    }
 }
