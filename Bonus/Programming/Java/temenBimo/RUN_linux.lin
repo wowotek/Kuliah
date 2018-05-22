@@ -1,0 +1,3 @@
+javac motor/*.java
+java -cp ./motor Motor
+rm motor/*.class
