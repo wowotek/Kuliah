@@ -19,7 +19,7 @@ public void setup(){
 }
 
 public void draw(){
-  background(random(255), random(255), random(255));
+  background();
 }
   public void settings() {  size(800, 600); }
   static public void main(String[] passedArgs) {
