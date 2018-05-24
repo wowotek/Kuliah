@@ -58,6 +58,7 @@ main() {
     
     echo "  -> Menginstall Notepadqq"
     snap install notepadqq
+    clear
 
     echo "  -> Menginstall Libre Office"
     apt-get install libreoffice
@@ -84,6 +85,8 @@ main() {
     
     echo "  -> Menginstall VirtualBox"
     apt-get install virtualbox-5.0 --fix-missing
+    clear 
+
     echo "  -> Menginstall GIMP"
     apt-get install gimp
     clear
