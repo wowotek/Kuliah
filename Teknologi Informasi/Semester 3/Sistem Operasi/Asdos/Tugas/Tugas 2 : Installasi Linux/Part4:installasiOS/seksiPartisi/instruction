@@ -1,9 +1,0 @@
-11. <SEKSI PARTISI>
-        1. Saat memasuki seksi Ini, silahkan klik "New Partition Table", Jika ada Notifikasi Lanjutan, klik Continue.
-        2. Lalu klik pada Free Space, klik tombol "+" disebelah kiri, lalu Set Size Menjadi diatas  > 20240 MB, kaliini saya memasukan angka 22000 MB. Ubah Mount Point menjadi "/". Klik OK
-        3. Lalu akan muncul Free Space Baru, Klik Tombol "+" lagi.
-        4. Ubah Size menjadi diatas > 2048 MB. kali ini saya mengubah Menjadi 2148 MB. Ubah Type of New Partition Menjadi Logical, lalu ubah Use As Menjadi "swap area". Klik OK.
-        5. Terakhir anda klik Free Space, klik tombol "+" untuk terakhil kali.
-        6. Biarkan Size seperti yang sudah ditetapkan secara Otomatis. ubah Mount Point menjadi "/home" partisi ini akan digunakan untuk installasi Aplikasi Tambahan. klik OK.
-        7. Klik Install now, jika ada notifikasi lanjutan klik Continue.
-        </SEKSI PARTISI>
