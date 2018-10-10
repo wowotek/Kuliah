@@ -8,7 +8,7 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
 1. [Installasi Snort](#installasi-snort)
 	1. [Compile Manual Source Code](#compile-source-code)
 	2. [Via Apt](#via-apt)
-	3. Menghapus Snort
+	3. [Menghapus Snort](#menghapus-snort)
 2. [Konfigurasi Snort](#pembuatan-rules-snort)
 
 ## Installasi Snort
@@ -96,29 +96,137 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     ```
     ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/13.0.png)
     ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/13.1.png)
-13. Cek `Snort` Dengan :
+13. Manage dan install _**shared libraries**_:
+    ```
+    $ sudo ldconfig
+    ```
+14. Buat user khusus untuk `Snort` :
+    ```
+    $ sudo groupadd snort
+    $ sudo useradd snort -r -s /sbin/nologin -c SNORT_IDS -g snort
+    ```
+15. Buat `Snort` _System Directory_ :
+    ```
+    $ sudo mkdir /etc/snort
+    $ sudo mkdir /etc/snort/rules
+    $ sudo mkdir /etc/snort/rules/iplists
+    $ sudo mkdir /etc/snort/preproc_rules
+    $ sudo mkdir /usr/local/lib/snort_dynamicrules
+    $ sudo mkdir /etc/snort/so_rules
+    ```
+16. Buat _Placeholder_ file untuk rules dan iplist:
+    ```
+    $ sudo touch /etc/snort/rules/iplists/black_list.rules
+    $ sudo touch /etc/snort/rules/iplists/white_list.rules
+    $ sudo touch /etc/snort/rules/local.rules
+    $ sudo touch /etc/snort/sid-msg.map
+    ```
+17. Buat _Placeholder_ file untuk log `Snort`:
+    ```
+    $ sudo mkdir /var/log/snort
+    $ sudo mkdir /var/log/snort/archived_logs
+    ```
+18. Pindah ke File Source Code Snort:
+    ```
+    $ cd SnortInstall/snort-2.9.11.1/etc/
+    ```
+19. _Copy_ file konfigurasi ke folder lokal:
+    ```
+    $ sudo cp *.conf* /etc/snort
+    $ sudo cp *.map /etc/snort
+    $ sudo cp *.dtd /etc/snort
+    ```
+20. _Copy_ dynamic preprocessor ke folder lokal `Snort`:
+    ```
+    $ cd ../src/dynamic-preprocessors/build/usr/local/lib/snort_dynamicpreprocessor/
+    $ sudo cp * /usr/local/lib/snort_dynamicpreprocessor/
+    $ cd
+    ```
+21. Cek Keberhasilan Installasi `Snort` Dengan :
     ```
     $ snort --version
     ```
     ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/FinalSnortVersion.png)
+22. Konfigurasikan `Snort` sesuai dengan [Konfigurasi Installasi Manual](#konfigurasi-installasi-manual)
 
 ### Via Apt
 1. Install `Snort` Dependencies:
     ```
     $ sudo apt-get install gcc g++ libpcap-dev libpcre3 libpcre3-dev libdumbnet-dev zlib1g-dev bison flex
     ```
-    ![]()
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/4.0.png)
 2. Install `Snort`:
     ```
     $ sudo apt-get install snort
     ```
-    ![]()
-3. Cek `Snort` Dengan:
+3. Konfigurasikan sesuai dengan [Konfigurasi Installasi apt](#konfigurasi-installasi-apt)
+
+### Konfigurasi `Snort`
+#### Konfigurasi Installasi apt
+1. Cek network interface anda dengan `ifconfig`
+2. Ganti Interface anda sesuai dengan interface network
+3. Ganti IP range sesuai dengan ip server
+4. Cek `Snort` Dengan :
     ```
     $ snort --version
     ```
-    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/FinalSnortVersion.png)
-    
+#### Konfigurasi Installasi Manual
+1. **_incomment_** semua ruleset dalam `snort.conf` lalu edit konfigurasi `snort`:
+    ```
+    $ sudo sed -i "s/include \$RULE\_PATH/#include \$RULE\_PATH/" /etc/snort/snort.conf
+    $ sudo vim /etc/snort/snort.conf
+    ```
+2. Konfigurasikan `HOME_NET` anda dengan ip yang ingin di proteksi:
+    - cek ip anda dengan `ifconfig`; dengan server ini mendapat ip : `192.168.1.10` maka CIDR nya adalah `192.168.1.0/24`
+    - lalu ubah line berikut:
+        ```
+        # Setup the network addresses you are protecting
+        ipvar HOME_NET any
+        ```
+        menjadi :
+        ```
+        # Setup the network addresses you are protecting
+        ipvar HOME_NET 192.168.1.0/24
+        ```
+3. konfigurasikan folder rule:
+    - arahkan ke line berikut dengan menekan: `esc` + `/` + `c:\\`
+    - lalu ubah line berikut :
+        ```
+        # such as:  c:\snort\rules
+        var RULE_PATH ../rules
+        var SO_RULE_PATH ../so_rules
+        var PREPROC_RULE_PATH ../preproc_rules
+        
+        # If you are using reputation preprocessor set these
+        var WHITE_LIST_PATH ../rules
+        var BLACK_LIST_PATH ../rules
+        ```
+        dengan :
+        ```
+        # such as:  c:\snort\rules
+        var RULE_PATH /etc/snort/rules
+        var SO_RULE_PATH /etc/snort/so_rules
+        var PREPROC_RULE_PATH /etc/snort/preproc_rules
+        var WHITE_LIST_PATH /etc/snort/rules/iplists
+        var BLACK_LIST_PATH /etc/snort/rules/iplists
+        ```
+4. include rules lokal:
+    - arahkan ke line berikut dengan menekan: `esc` + `/` + `site specific`
+    - lalu ubah line berikut :
+        ```
+        # site specific rules
+        #include $RULE_PATH/local.rules
+        ```
+        menjadi :
+        ```
+        # site specific rules
+        include $RULE_PATH/local.rules
+        ```
+5. save dan keluar vim dengan : `esc` + `:` + `wq` + `enter`
+6. Verifikasi setting konfigurasi snort dengan :
+    ```
+    $ sudo snort -T -i enp1s0 -c /etc/snort/snort.conf
+    ```
 ### Menghapus `Snort`
 - Jika anda menggunakan Source Code:
     1. Pindahkan Working Directory ke folder Source Code `snort` :
