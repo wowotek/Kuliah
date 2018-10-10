@@ -1,3 +1,4 @@
+![Logo](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/Installasi/doc_logo.png)
 # Tugas 3 Keamanan Jaringan 
 ---
 Tutorial ini menggunakan **Ubuntu Server 18.04.1 LTS** yang di koneksikan via _**Secure Shell**_ atau _**SSH**_.
@@ -264,3 +265,4 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
         
 ## Pembuatan Rules Snort
 ---
+
