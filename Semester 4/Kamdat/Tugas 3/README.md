@@ -205,7 +205,7 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
         # Setup the network addresses you are protecting
         ipvar HOME_NET 192.168.1.0/24
         ```
-        ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/ip_change.png)
+        ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/ip_changes.png)
 3. konfigurasikan folder rule:
     - arahkan ke line berikut dengan menekan: `esc` + `/` + `c:\\`
     - lalu ubah line berikut :
