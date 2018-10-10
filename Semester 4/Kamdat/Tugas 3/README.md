@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/Installasi/doc_logo.png)
+![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/Installasi/sourcecode/doc_logo.png)
 # Tugas 3 Keamanan Jaringan 
 ---
 Tutorial ini menggunakan **Ubuntu Server 18.04.1 LTS** yang di koneksikan via _**Secure Shell**_ atau _**SSH**_.
@@ -104,11 +104,15 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     ```
     $ sudo ldconfig
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/ldconf.png)
 14. Buat user khusus untuk `Snort` :
     ```
     $ sudo groupadd snort
     $ sudo useradd snort -r -s /sbin/nologin -c SNORT_IDS -g snort
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/useradd.png)
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/groupadd.png)
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/usergroupcheck.png)
 15. Buat `Snort` _System Directory_ :
     ```
     $ sudo mkdir /etc/snort
@@ -118,6 +122,7 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     $ sudo mkdir /usr/local/lib/snort_dynamicrules
     $ sudo mkdir /etc/snort/so_rules
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/adddir.png)
 16. Buat _Placeholder_ file untuk rules dan iplist:
     ```
     $ sudo touch /etc/snort/rules/iplists/black_list.rules
@@ -125,11 +130,13 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     $ sudo touch /etc/snort/rules/local.rules
     $ sudo touch /etc/snort/sid-msg.map
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/placeconf.png)
 17. Buat _Placeholder_ file untuk log `Snort`:
     ```
     $ sudo mkdir /var/log/snort
     $ sudo mkdir /var/log/snort/archived_logs
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/placelog.png)
 18. Pindah ke File Source Code Snort:
     ```
     $ cd SnortInstall/snort-2.9.11.1/etc/
@@ -140,17 +147,19 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     $ sudo cp *.map /etc/snort
     $ sudo cp *.dtd /etc/snort
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/cpdata.png)
 20. _Copy_ dynamic preprocessor ke folder lokal `Snort`:
     ```
     $ cd ../src/dynamic-preprocessors/build/usr/local/lib/snort_dynamicpreprocessor/
     $ sudo cp * /usr/local/lib/snort_dynamicpreprocessor/
     $ cd
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/cpdynamic.png)
 21. Cek Keberhasilan Installasi `Snort` Dengan :
     ```
     $ snort --version
     ```
-    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/Installasi/sourcecode/FinalSnortVersion.png)
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/Installasi/FinalSnortVersion.png)
 22. Konfigurasikan `Snort` sesuai dengan [Konfigurasi Instalasi Manual](#konfigurasi-instalasi-manual)
 
 ### Via Apt
@@ -158,30 +167,34 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     ```
     $ sudo apt-get install gcc g++ libpcap-dev libpcre3 libpcre3-dev libdumbnet-dev zlib1g-dev bison flex
     ```
-    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/Installasi/sourcecode/4.0.png)
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/Installasi/apt/install_dep.png)
 2. Install `Snort`:
     ```
     $ sudo apt-get install snort
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/Installasi/apt/install_apt_1.png)
 3. Konfigurasikan sesuai dengan [Konfigurasi Instalasi apt](#konfigurasi-instalasi-apt)
 
 ### Konfigurasi `Snort`
 #### Konfigurasi Instalasi apt
 1. Cek network interface anda dengan `ifconfig`
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_apt/server_interface.png)
 2. Ganti Interface anda sesuai dengan interface network
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_apt/resetting_interface.png)
 3. Ganti IP range sesuai dengan ip server
-4. Cek `Snort` Dengan :
-    ```
-    $ snort --version
-    ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_apt/ip_server.png)
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_apt/resetting_ip.png)
 #### Konfigurasi Instalasi Manual
 1. **_incomment_** semua ruleset dalam `snort.conf` lalu edit konfigurasi `snort`:
     ```
     $ sudo sed -i "s/include \$RULE\_PATH/#include \$RULE\_PATH/" /etc/snort/snort.conf
     $ sudo vim /etc/snort/snort.conf
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/incomment.png)
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/vim.png)
 2. Konfigurasikan `HOME_NET` anda dengan ip yang ingin di proteksi:
     - cek ip anda dengan `ifconfig`; dengan server ini mendapat ip : `192.168.1.10` maka CIDR nya adalah `192.168.1.0/24`
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/netint.png)
     - lalu ubah line berikut:
         ```
         # Setup the network addresses you are protecting
@@ -192,6 +205,7 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
         # Setup the network addresses you are protecting
         ipvar HOME_NET 192.168.1.0/24
         ```
+        ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/ip_change.png)
 3. konfigurasikan folder rule:
     - arahkan ke line berikut dengan menekan: `esc` + `/` + `c:\\`
     - lalu ubah line berikut :
@@ -205,6 +219,7 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
         var WHITE_LIST_PATH ../rules
         var BLACK_LIST_PATH ../rules
         ```
+        ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/var.png)
         dengan :
         ```
         # such as:  c:\snort\rules
@@ -214,6 +229,7 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
         var WHITE_LIST_PATH /etc/snort/rules/iplists
         var BLACK_LIST_PATH /etc/snort/rules/iplists
         ```
+        ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/var_change.png)
 4. include rules lokal:
     - arahkan ke line berikut dengan menekan: `esc` + `/` + `site specific`
     - lalu ubah line berikut :
@@ -226,11 +242,14 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
         # site specific rules
         include $RULE_PATH/local.rules
         ```
+        ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/include_change.png)
 5. save dan keluar vim dengan : `esc` + `:` + `wq` + `enter`
 6. Verifikasi setting konfigurasi snort dengan :
     ```
     $ sudo snort -T -i enp1s0 -c /etc/snort/snort.conf
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/test.png)
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/konfigurasi_manual/finished.png)
 ### Menghapus `Snort`
 - Jika anda menggunakan Source Code:
     1. Pindahkan Working Directory ke folder Source Code `snort` :
