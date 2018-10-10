@@ -5,7 +5,7 @@ Tutorial ini menjelaskan tentang installasi **SNORT** yang merupakan tools _**Ne
 Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNORT** pada saat installasi ataupun _Runtime_.
 
 ###Table of Content
-1. [Installasi Snort](#Installasi-Snort)
+1. [Installasi Snort](#installasi-snort)
 	1. Via Source Code
 	2. Via Apt
 2. [Konfigurasi Snort](#Pembuatan-Rules-Snort)
