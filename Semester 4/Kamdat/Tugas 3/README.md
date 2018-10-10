@@ -5,13 +5,16 @@ Tutorial ini menjelaskan tentang installasi **SNORT** yang merupakan tools _**Ne
 Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNORT** pada saat installasi ataupun _Runtime_.
 
 ### Table of Content
-1. [Installasi Snort](#installasi-snort)
+1. [Instalasi Snort](#instalasi-snort)
 	1. [Compile Manual Source Code](#compile-source-code)
 	2. [Via Apt](#via-apt)
-	3. [Menghapus Snort](#menghapus-snort)
+	3. [Konfigurasi Snort](#konfigurasi-snort)
+	    - [Konfigurasi Instalasi Apt](#konfigurasi-instalasi-apt)
+	    - [Konfigurasi Instalasi manual](#konfigurasi-instalasi-manual)
+	4. [Menghapus Snort](#menghapus-snort)
 2. [Konfigurasi Snort](#pembuatan-rules-snort)
 
-## Installasi Snort
+## Instalasi Snort
 ---
 
 ### Compile Source Code
@@ -162,7 +165,7 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
 3. Konfigurasikan sesuai dengan [Konfigurasi Installasi apt](#konfigurasi-installasi-apt)
 
 ### Konfigurasi `Snort`
-#### Konfigurasi Installasi apt
+#### Konfigurasi Instalasi apt
 1. Cek network interface anda dengan `ifconfig`
 2. Ganti Interface anda sesuai dengan interface network
 3. Ganti IP range sesuai dengan ip server
@@ -170,7 +173,7 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     ```
     $ snort --version
     ```
-#### Konfigurasi Installasi Manual
+#### Konfigurasi Instalasi Manual
 1. **_incomment_** semua ruleset dalam `snort.conf` lalu edit konfigurasi `snort`:
     ```
     $ sudo sed -i "s/include \$RULE\_PATH/#include \$RULE\_PATH/" /etc/snort/snort.conf
