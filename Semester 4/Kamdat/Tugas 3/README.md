@@ -150,7 +150,7 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     $ snort --version
     ```
     ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/FinalSnortVersion.png)
-22. Konfigurasikan `Snort` sesuai dengan [Konfigurasi Installasi Manual](#konfigurasi-installasi-manual)
+22. Konfigurasikan `Snort` sesuai dengan [Konfigurasi Instalasi Manual](#konfigurasi-instalasi-manual)
 
 ### Via Apt
 1. Install `Snort` Dependencies:
@@ -162,7 +162,7 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     ```
     $ sudo apt-get install snort
     ```
-3. Konfigurasikan sesuai dengan [Konfigurasi Installasi apt](#konfigurasi-installasi-apt)
+3. Konfigurasikan sesuai dengan [Konfigurasi Instalasi apt](#konfigurasi-instalasi-apt)
 
 ### Konfigurasi `Snort`
 #### Konfigurasi Instalasi apt
