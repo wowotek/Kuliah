@@ -4,7 +4,7 @@
 - Tutorial ini menggunakan Komputer atau PC berbeda 1 buah _**Client**_ dan 1 buah _**Server**_.
 - Tutorial ini menggunakan _**Client**_ dengan Sistem Operasi **Ubuntu 18.04.1 LTS**.
 - Tutorial ini menggunakan _**Client**_ dengan _**`IP ADDRESS`**_ : `192.168.1.8`.
-- Tutorial ini menggunakan _**Server**_ dengan Sistem Operasi **Ubuntu 18.04.1 LTS** 
+- Tutorial ini menggunakan _**Server**_ dengan Sistem Operasi **Ubuntu Server 18.04.1 LTS** 
 - Tutorial ini menggunakan _**Server**_ dengan _**`IP ADDRESS`**_ : `192.168.1.10`.
 - Tutorial ini menggunakan _**Server**_ dengan koneksi _**Secure Shell**_ atau _**SSH**_ dengan _**OpenSSH Server**_. 
 - Tutorial ini menggunakan _**Server**_ dengan Username **sysadmin**.
