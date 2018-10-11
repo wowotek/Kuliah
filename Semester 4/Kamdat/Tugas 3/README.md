@@ -1,9 +1,10 @@
-![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/Installasi/sourcecode/doc_logo.png)
+![](https://github.com/wowotek/Kuliah/blob/master/Semester%204/Kamdat/Tugas%203/Installasi/doc_logo.png)
 # Tugas 3 Keamanan Jaringan 
 ---
 Tutorial ini menggunakan **Ubuntu Server 18.04.1 LTS** yang di koneksikan via _**Secure Shell**_ atau _**SSH**_.
-Tutorial ini menjelaskan tentang installasi **SNORT** yang merupakan tools _**Nertwork Intrusion Detection & Prevention System**_.
+Tutorial ini menjelaskan tentang installasi **SNORT** yang merupakan tools _**Network Intrusion Detection & Prevention System**_.
 Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNORT** pada saat installasi ataupun _Runtime_.
+Tutorial ini menjelaskan tentang pembuatan rules pada **SNORT**
 
 ### Table of Content
 1. [Instalasi Snort](#instalasi-snort)
