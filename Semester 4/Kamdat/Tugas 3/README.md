@@ -28,7 +28,7 @@
     1. [Test Ping Alert](#test-ping-alert-rules)
     2. [Test TCP Alert](#test-tcp-alert-rules)
     3. [Test UDP Alert](#test-udp-alert-rules)
-4. Informasi Pembuat
+4. [Informasi Pembuat](#informasi-pembuat)
 
 ## Instalasi Snort
 ---
