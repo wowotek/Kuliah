@@ -15,8 +15,12 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
 	4. [Menghapus Snort](#menghapus-snort)
 2. [Pembuatan Rules Snort](#pembuatan-rules-snort)
     1. [Ping Alert Rules](#ping-alert-rules)
+    2. [TCP Alert Rules](#tcp-alert-rules)
+    3. [UDP Alert Rules](#udp-alert-rules)
 3. [Test Snort](#test-snort)
     1. [Test Ping Alert](#test-ping-alert-rules)
+    2. [Test TCP Alert](#test-tcp-alert-rules)
+    3. [Test UDP Alert](#test-udp-alert-rules)
 
 ## Instalasi Snort
 ---
