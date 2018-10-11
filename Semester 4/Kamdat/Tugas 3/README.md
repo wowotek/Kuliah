@@ -28,6 +28,7 @@
     1. [Test Ping Alert](#test-ping-alert-rules)
     2. [Test TCP Alert](#test-tcp-alert-rules)
     3. [Test UDP Alert](#test-udp-alert-rules)
+4. Informasi Pembuat
 
 ## Instalasi Snort
 ---
@@ -425,3 +426,12 @@
     $ echo "This is my data" > /dev/udp/192.168.1.10/3000
     ```
     ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_rule_udp/FINAL.png)
+
+## Informasi Pembuat
+---
+|||
+|---|---|
+| Nama | Erlangga Ibrahim|
+| NIM | 672017282 |
+| Kelas | Keamanan Jaringan C |
+|||
