@@ -284,4 +284,52 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
         
 ## Pembuatan Rules Snort
 ---
+### Ping Alert Rules
+1. `ssh` ke server:
+    ```
+    $ ssh sysadmin@192.168.1.10
+    ```
+2. buka konfigurasi snort dengan `vim` atau `nano` lalu arahkan ke `ipvar HOME_NET ~`:
+    ```
+    $ sudo vim /etc/snort/snort.conf
+    ```
+3. ubah ip menjadi ip lokal server:
+4. comment rules `local.rules`:
+5. lalu arahkan ke line paling ujung dan tambahkan :
+    ```
+    include $RULE_PATH/pingalert.rules
+    ```
+6. save dan keluar dari editor
+7. buat dan edit file yang baru ditambahkan yaitu `pingalert.rules` menggunakan `tee` atau `vim`:
+    ```
+    $ sudo tee /etc/snort/rules/pingalert.rules
+    $ sudo vim /etc/snort/rules/pingalert.rules
+    ```
+    atau
+    ```
+    $ sudo vim /etc/snort/rules/pingalert.rules
+    ```
+8. buat rules yang mendeteksi ping dari client ke server:
+    ```
+    alert icmp 192.168.1.8 any -> 192.168.1.10 any (msg:"PING RECEIVED"; sid:1;)
+    ```
+9. simpan lalu keluar
+10. Cek dengan [tail](#test-ping-alert-rules)
 
+## Test Snort
+---
+1. buka terminal baru
+2. jalankan `tail` ke file alert `snort`:
+    ```
+    $ tail -F /var/log/snort/alert
+    ```
+3. jalankan snort
+    ```
+    $ sudo snort -v -i enp1s0 -c /etc/snort/snort.conf
+    ```
+### Test Ping Alert Rules
+1. Pada **_CLIENT_** buka terminal
+2. lalu Ping ke server menggunakan ip server:
+    ```
+    $ ping 192.168.1.10 -c 3
+    ```
