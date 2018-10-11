@@ -13,7 +13,10 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
 	    - [Konfigurasi Instalasi Apt](#konfigurasi-instalasi-apt)
 	    - [Konfigurasi Instalasi manual](#konfigurasi-instalasi-manual)
 	4. [Menghapus Snort](#menghapus-snort)
-2. [Konfigurasi Snort](#pembuatan-rules-snort)
+2. [Pembuatan Rules Snort](#pembuatan-rules-snort)
+    1. [Ping Alert Rules](#ping-alert-rules)
+3. [Test Snort](#test-snort)
+    1. [Test Ping Alert](#test-ping-alert-rules)
 
 ## Instalasi Snort
 ---
