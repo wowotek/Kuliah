@@ -326,6 +326,51 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
 9. simpan lalu keluar
 10. Cek dengan [tail](#test-ping-alert-rules)
 
+### TCP Alert Rules
+1. buat dan edit file rules baru:
+    ```
+    $ sudo vim /etc/snort/rules/tcpalert.rules
+    ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_rule_tcp/newfile.png)
+2. tambah 2 rules berikut :
+    ```
+    alert tcp 192.168.1.8 any -> 192.168.1.10 22 (msg: "SSH Packet found"; sid:2; )
+    alert tcp 192.168.1.8 any -> 192.168.1.10 80 (msg: "HTTP Packet found"; sid:3; )
+    ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_rule_tcp/addrule.png)
+3. tambahkan rules ke dalam konfigurasi `snort`:
+    ```
+    $ sudo vim /etc/snort/snort.conf
+    ```
+    tambahkan
+    ```
+    include $RULE_PATH/tcpalert.rules
+    ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_rule_tcp/tambahkonfig.png)
+4. cek menggunakan [tail](#test-tcp-alert-rules)
+
+### UDP Alert Rules
+1. buat dan edit file rules baru:
+    ```
+    $ sudo vim /etc/snort/rules/udpalert.rules
+    ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_rule_udp/newfile.png)
+2. tambah 1 rules berikut :
+    ```
+    alert udp 192.168.1.8 any -> 192.168.1.10 3000 (msg: "UDP Packet found"; sid:4; )
+    ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_rule_udp/newrule.png)
+3. tambahkan rules ke dalam konfigurasi `snort`:
+    ```
+    $ sudo vim /etc/snort/snort.conf
+    ```
+    Comment 2 rules sebelumnya lalu tambahkan
+    ```
+    include $RULE_PATH/udpalert.rules
+    ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_rule_udp/addrule.png)
+4. cek menggunakan [tail](#test-udp-alert-rules)
+
 ## Test Snort
 ---
 1. buka terminal baru
@@ -338,6 +383,7 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     ```
     $ sudo snort -v -i enp1s0 -c /etc/snort/snort.conf
     ```
+    
 ### Test Ping Alert Rules
 1. Pada **_CLIENT_** buka terminal
 2. lalu Ping ke server menggunakan ip server:
@@ -345,3 +391,26 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     $ ping 192.168.1.10 -c 3
     ```
     ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_snort/FINAL.png)
+
+### Test TCP Alert Rules
+1. Pada **_CLIENT_** buka terminal
+2. lalu ssh ke server
+    ```
+    $ ssh sysadmin@192.168.1.10
+    ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_rule_tcp/ssh.png)
+3. Pada **_CLIENT_** buka _browser_
+4. Masukan IP server kedalam browser menggunakan protokol http:
+    ```
+    http://192.168.1.10
+    ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_rule_tcp/ipbrowser.png)
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_rule_tcp/http.png)
+    
+### Test UDP Alert Rules
+1. Pada **_CLIENT_** buka terminal
+2. lalu kirimkan pake udp ke server menggunakan `echo`:
+    ```
+    $ echo "This is my data" > /dev/udp/192.168.1.10/3000
+    ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_rule_udp/FINAL.png)
