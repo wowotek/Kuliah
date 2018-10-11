@@ -289,16 +289,21 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     ```
     $ ssh sysadmin@192.168.1.10
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_snort/ssh.png)
 2. buka konfigurasi snort dengan `vim` atau `nano` lalu arahkan ke `ipvar HOME_NET ~`:
     ```
     $ sudo vim /etc/snort/snort.conf
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_snort/arahip.png)
 3. ubah ip menjadi ip lokal server:
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_snort/ubahip.png)
 4. comment rules `local.rules`:
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_snort/commentrules.png)
 5. lalu arahkan ke line paling ujung dan tambahkan :
     ```
     include $RULE_PATH/pingalert.rules
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_snort/addrules.png)
 6. save dan keluar dari editor
 7. buat dan edit file yang baru ditambahkan yaitu `pingalert.rules` menggunakan `tee` atau `vim`:
     ```
@@ -309,21 +314,24 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     ```
     $ sudo vim /etc/snort/rules/pingalert.rules
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_snort/newfilerule.png)
 8. buat rules yang mendeteksi ping dari client ke server:
     ```
     alert icmp 192.168.1.8 any -> 192.168.1.10 any (msg:"PING RECEIVED"; sid:1;)
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_snort/ruleadds.png)
 9. simpan lalu keluar
 10. Cek dengan [tail](#test-ping-alert-rules)
 
 ## Test Snort
 ---
 1. buka terminal baru
-2. jalankan `tail` ke file alert `snort`:
+2. jalankan `tail` ke file alert `snort` pada terminal baru:
     ```
     $ tail -F /var/log/snort/alert
     ```
-3. jalankan snort
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_snort/runtail.png)
+3. jalankan snort pada terminal lama:
     ```
     $ sudo snort -v -i enp1s0 -c /etc/snort/snort.conf
     ```
@@ -333,3 +341,4 @@ Tutorial ini menjelaskan tentang installasi _Dependencies_ yang dibutuhkan **SNO
     ```
     $ ping 192.168.1.10 -c 3
     ```
+    ![](https://raw.githubusercontent.com/wowotek/Kuliah/master/Semester%204/Kamdat/Tugas%203/test_snort/FINAL.png)
