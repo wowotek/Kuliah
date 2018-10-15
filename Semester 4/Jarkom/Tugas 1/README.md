@@ -51,3 +51,7 @@
     ```
     $ /opt/pt/bin/PacketTracer7
     ```
+# Informasi Pembuat
+---
+Nama : Erlangga Ibrahim
+NIM : 672017282
