@@ -53,5 +53,5 @@
     ```
 # Informasi Pembuat
 ---
-Nama : Erlangga Ibrahim
-NIM : 672017282
+- Nama : Erlangga Ibrahim
+- NIM : 672017282
