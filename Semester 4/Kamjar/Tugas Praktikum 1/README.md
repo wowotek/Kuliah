@@ -19,8 +19,13 @@
 - 2 Client :
 	- Ubuntu Server 18.04.1 @ 192.168.1.10
 	- Ubuntu Desktop (Host) 18.04.1 @ 192.168.1.7
-- Rule Pada Shorewall
 
+### Kelompok Pengerjaan :
+- Nama Kelompok :
+	1. Aurelia Gabriele _`@`_ **672017277**
+	2. Erlangga Ibrahim _`@`_ **672017282**
+- Kelas :
+	- **Keamanan Jaringan** _**C**_ _`@`_ Jum'at **15:00**
 ## Installasi dan Konfigurasi Shorewall
 ---
 - Buka Dua Terminal
